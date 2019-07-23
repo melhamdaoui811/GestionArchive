@@ -119,5 +119,15 @@ INNER JOIN Classe c on c.IdClasse = a.IdClasse WHERE e.IdEtudiant = 2
                 con.Close();
             }
         }
+
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnShow_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

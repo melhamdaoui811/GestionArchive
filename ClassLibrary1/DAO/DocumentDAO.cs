@@ -11,7 +11,7 @@ using SqlKata.Execution;
 
 namespace DAO
 {
-    class DocumentDAO
+    public class DocumentDAO
     {
         private SqlConnection connection;
 
@@ -42,7 +42,7 @@ namespace DAO
             {
                 SqlServerCompiler compiler = new SqlServerCompiler();
                 var db = new QueryFactory(connection, compiler);
-                var documents = db.Query("Document").GetAsync<Document>().GetAwaiter().GetResult();
+                var documents = db.Query("Document").Select("IdDocument", "FichPath", "TypeDocument").Get<Document>();
                 if (documents.Count() == 0)
                     return null;
                 return documents;

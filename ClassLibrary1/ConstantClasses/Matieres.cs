@@ -9,5 +9,6 @@ namespace ClassLibrary.ConstantClasses
     public class Matieres
     {
         public static object[] Français = {"Français", 4, 1};
+
     }
 }

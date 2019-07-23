@@ -32,6 +32,8 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.rdSemestreTwo = new System.Windows.Forms.RadioButton();
+            this.rdSemestreOne = new System.Windows.Forms.RadioButton();
             this.cbMatiere = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtNote = new System.Windows.Forms.TextBox();
@@ -49,8 +51,6 @@
             this.btnShow = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.rdSemestreOne = new System.Windows.Forms.RadioButton();
-            this.rdSemestreTwo = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -112,6 +112,32 @@
             this.groupBox5.TabIndex = 12;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Nom Matiere";
+            // 
+            // rdSemestreTwo
+            // 
+            this.rdSemestreTwo.AutoSize = true;
+            this.rdSemestreTwo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rdSemestreTwo.Location = new System.Drawing.Point(3, 64);
+            this.rdSemestreTwo.Name = "rdSemestreTwo";
+            this.rdSemestreTwo.Padding = new System.Windows.Forms.Padding(5);
+            this.rdSemestreTwo.Size = new System.Drawing.Size(302, 27);
+            this.rdSemestreTwo.TabIndex = 2;
+            this.rdSemestreTwo.Text = "2eme Semstre";
+            this.rdSemestreTwo.UseVisualStyleBackColor = true;
+            // 
+            // rdSemestreOne
+            // 
+            this.rdSemestreOne.AutoSize = true;
+            this.rdSemestreOne.Checked = true;
+            this.rdSemestreOne.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rdSemestreOne.Location = new System.Drawing.Point(3, 37);
+            this.rdSemestreOne.Name = "rdSemestreOne";
+            this.rdSemestreOne.Padding = new System.Windows.Forms.Padding(5);
+            this.rdSemestreOne.Size = new System.Drawing.Size(302, 27);
+            this.rdSemestreOne.TabIndex = 1;
+            this.rdSemestreOne.TabStop = true;
+            this.rdSemestreOne.Text = "1ere Semestre";
+            this.rdSemestreOne.UseVisualStyleBackColor = true;
             // 
             // cbMatiere
             // 
@@ -274,6 +300,7 @@
             this.btnShow.TabIndex = 16;
             this.btnShow.Text = "Afficher les notes d\'étudiant";
             this.btnShow.UseVisualStyleBackColor = true;
+            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
             // dataGridView
             // 
@@ -283,36 +310,11 @@
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.Size = new System.Drawing.Size(1258, 450);
             this.dataGridView.TabIndex = 2;
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
             // errorProvider
             // 
             this.errorProvider.ContainerControl = this;
-            // 
-            // rdSemestreOne
-            // 
-            this.rdSemestreOne.AutoSize = true;
-            this.rdSemestreOne.Checked = true;
-            this.rdSemestreOne.Dock = System.Windows.Forms.DockStyle.Top;
-            this.rdSemestreOne.Location = new System.Drawing.Point(3, 37);
-            this.rdSemestreOne.Name = "rdSemestreOne";
-            this.rdSemestreOne.Padding = new System.Windows.Forms.Padding(5);
-            this.rdSemestreOne.Size = new System.Drawing.Size(302, 27);
-            this.rdSemestreOne.TabIndex = 1;
-            this.rdSemestreOne.TabStop = true;
-            this.rdSemestreOne.Text = "1ere Semestre";
-            this.rdSemestreOne.UseVisualStyleBackColor = true;
-            // 
-            // rdSemestreTwo
-            // 
-            this.rdSemestreTwo.AutoSize = true;
-            this.rdSemestreTwo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.rdSemestreTwo.Location = new System.Drawing.Point(3, 64);
-            this.rdSemestreTwo.Name = "rdSemestreTwo";
-            this.rdSemestreTwo.Padding = new System.Windows.Forms.Padding(5);
-            this.rdSemestreTwo.Size = new System.Drawing.Size(302, 27);
-            this.rdSemestreTwo.TabIndex = 2;
-            this.rdSemestreTwo.Text = "2eme Semstre";
-            this.rdSemestreTwo.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
