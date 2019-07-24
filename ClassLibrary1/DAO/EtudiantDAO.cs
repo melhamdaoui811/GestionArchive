@@ -43,6 +43,29 @@ namespace DAO
         }
 
         /// <summary>
+        /// Get Etudiant by IdDocument
+        /// </summary>
+        /// <param name="IdEtudiant"></param>
+        /// <returns></returns>
+        public Etudiant GetEtudiantByIdDocuments(int IdDocument)
+        {
+            try
+            {
+                SqlServerCompiler compiler = new SqlServerCompiler();
+                var db = new QueryFactory(connection, compiler);
+                var etudiant = db.Query("Etudiant").Join("Document", "Etudiant.IdEtudiant", "Document.IdDocument")
+                    .Where("Document.IdDocument", IdDocument).FirstOrDefault<Etudiant>();
+                return etudiant;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Etudiant DAO Get Etudiant : " + ex.Message);
+                return null;
+            }
+        }
+
+
+        /// <summary>
         /// This Function return an etudiant by CNI
         /// </summary>
         /// <param name="CNI"></param>

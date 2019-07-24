@@ -26,7 +26,8 @@ namespace DAO
             {
                 SqlServerCompiler compiler = new SqlServerCompiler();
                 var db = new QueryFactory(connection, compiler);
-                var document = db.Query("Document").Where("IdDocument", idDocument).FirstOrDefault<Document>();
+                var document = db.Query("Document").Where("IdDocument", idDocument).Select("IdDocument", "FichPath", "TypeDocument").FirstOrDefault<Document>();
+                document.Etudiant = new EtudiantDAO().GetEtudiantByIdDocuments(document.IdDocument);
                 return document;
             }
             catch (Exception ex)
@@ -43,6 +44,10 @@ namespace DAO
                 SqlServerCompiler compiler = new SqlServerCompiler();
                 var db = new QueryFactory(connection, compiler);
                 var documents = db.Query("Document").Select("IdDocument", "FichPath", "TypeDocument").Get<Document>();
+                foreach (var item in documents)
+                {
+                    item.Etudiant = new EtudiantDAO().GetEtudiantByIdDocuments(item.IdDocument);
+                }
                 if (documents.Count() == 0)
                     return null;
                 return documents;
@@ -70,8 +75,7 @@ namespace DAO
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Document DAO Update : " + ex.Message);
-                return 0;
+                throw ex;
             }
         }
 
