@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data.Linq.Mapping;
 
 namespace Models {
 	public class Document {
@@ -56,6 +57,7 @@ namespace Models {
             set { typeDocument = value; }
         }
 
+        [Column(Name ="IdEtudiant")]
         public Etudiant Etudiant
         {
             get { return etudiant; }
